@@ -1,0 +1,6 @@
+framework module Pods_MvvmTraning {
+  umbrella header "Pods-MvvmTraning-umbrella.h"
+
+  export *
+  module * { export * }
+}
