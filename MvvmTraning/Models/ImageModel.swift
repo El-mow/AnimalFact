@@ -9,8 +9,13 @@ import Foundation
 
 struct ImageModel: Decodable {
     
-    let status: [String]
-    let message: String
-
+    let status: String
+    let message: [String]
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case status
+        case message
+    }
 
 }

@@ -8,7 +8,7 @@
 import Foundation
 import CardSlider
 
-class CardSliderSource: CardSliderDataSource {
+class FactSliderSource: CardSliderDataSource {
     private var cardSliderModels:[FactCardSliderModel]
     
     

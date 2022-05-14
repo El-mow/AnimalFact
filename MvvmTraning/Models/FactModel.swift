@@ -2,32 +2,33 @@
 //  FactModel.swift
 //  MvvmTraning
 //
-//  Created by mobin on 3/17/22.
+//  Created by mobin on 4/29/22.
 //
 
 import Foundation
 
-struct FactModel: Decodable {
+struct FactModel: Codable {
     let status: Status
-    let _id:String
-    let updatedAt, createdAt, user: String
-    let text: String
+    let id, user, text, type: String
     let deleted: Bool
+    let createdAt, updatedAt: String
+    let v: Int
     let source: String?
-    let __v : Int
-    let type: String
+    let used: Bool?
 
     enum CodingKeys: String, CodingKey {
         case status
-        case _id
-        case updatedAt, createdAt, user, text, deleted, source
-        case __v
-        case type
+        case id = "_id"
+        case user, text, type, deleted, createdAt, updatedAt
+        case v = "__v"
+        case source, used
     }
 }
 
 // MARK: - Status
-struct Status: Decodable {
-//    let verified: Int?
+struct Status: Codable {
+    let verified: Bool?
     let sentCount: Int
 }
+
+typealias Welcome = [FactModel]

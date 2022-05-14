@@ -10,15 +10,17 @@ import CardSlider
 
 class ViewController: UIViewController {
     
-    private var cardSliderFact:CardSliderSource?
     private var factViwModel: FactViewModel?
     
-   private var factCardSliderItems = [FactCardSliderModel]()
+    var sampleArray:Array<String> = []
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
        initView()
+        
+        
        
         
         
@@ -34,7 +36,8 @@ class ViewController: UIViewController {
     func  callViewModel() {
         self.factViwModel = FactViewModel()
         self.factViwModel?.bindViewModelToController = {
-            self.sampleData()
+           self.sampleData()
+//            self.getImageData()
         }
     }
 
@@ -51,25 +54,23 @@ class ViewController: UIViewController {
     
     func sampleData(){
         
-        factViwModel?.factDataList.forEach({ fact in
-            var value = FactCardSliderModel(image: UIImage(named: "harryPotterNewsPaper"), rating: fact?.__v, title: fact?.type ?? "unkwnon" , subtitle: fact?.source, description: fact?.text)
-            factCardSliderItems.append(value)
-            print(factCardSliderItems.count)
-
-        })
-        
-        cardSliderFact = CardSliderSource(cardSliderModel: factCardSliderItems)
-        let cardSlider = CardSliderViewController.with(dataSource: cardSliderFact as! CardSliderDataSource)
-        DispatchQueue.main.async {
-            cardSlider.title = "animals"
-            cardSlider.modalPresentationStyle = .overFullScreen
-            self.present(cardSlider, animated: true, completion: nil)
-
+        if factViwModel?.factCardSliderItems.count == 9 {
+            guard let cardSliderFact = factViwModel?.card_DataSource as? CardSliderDataSource else { return }
+            let cardSlider = CardSliderViewController.with(dataSource: cardSliderFact)
+            DispatchQueue.main.async {
+                            cardSlider.title = "animals"
+                            cardSlider.modalPresentationStyle = .overFullScreen
+                            self.present(cardSlider, animated: true, completion: nil)
+                        }
         }
 
-    
+
         
     }
+    
+
+    
+    
 
 
 }
