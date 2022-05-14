@@ -11,14 +11,12 @@ import Foundation
 
 class ApiServices : NSObject {
         
-    var base_url = "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=10"
-    
+    var base_url = "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=9"
     
     func getAnimalsFacts(completion: @escaping ([FactModel]) -> ()){
-        if let url = URL(string: base_url){
-            URLSession.shared.dataTask(with: url) {(data, urlResponse, error) in
+        if let url = URL(string: API.base_url){
+            URLSession.shared.dataTask(with: url) {[weak self](data, urlResponse, error) in
                 if let data = data {
-
                     let jsonCoder = JSONDecoder()
                     let empData = try! jsonCoder.decode([FactModel].self, from: data)
                     completion(empData)
@@ -29,15 +27,21 @@ class ApiServices : NSObject {
             
         }
     
-    func getImage(completion: @escaping (Data) -> ()){
+    func getImage(completion: @escaping (ImageModel) -> ()){
      
-        let url = URL(string: "https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg")!
+        let url : URL? = URL(string: "https://dog.ceo/api/breed/akita/images")
 
            // Create Data Task
-           let dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, _) in
-               if let get_data = data {
-                   print(get_data)
+           let dataTask = URLSession.shared.dataTask(with: url!) { [weak self] (data, _, _) in
+            
+               if let data = data {
+                  
+                   let jsonCoder = JSONDecoder()
+                   let  imageData = try! jsonCoder.decode(ImageModel.self, from: data)
+                   completion(imageData)
+                   
                }
+               
            }.resume()
     }
     
