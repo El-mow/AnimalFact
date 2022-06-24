@@ -49,9 +49,18 @@ class LaunchViewController: UIViewController {
         
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            self.animate()
             let ViewController = HomeViewController()
-            ViewController.modalTransitionStyle = .coverVertical
+            ViewController.modalTransitionStyle = .crossDissolve
+            ViewController.modalPresentationStyle = .fullScreen
             self.present(ViewController, animated: true)
+        }
+        
+    }
+    
+    func animate(){
+        UIView.animate(withDuration: 2) {
+            self.imageView.alpha = 0
         }
         
     }

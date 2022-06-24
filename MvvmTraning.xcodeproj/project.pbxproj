@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		08B80DBFD1313031567CEF8B /* Pods_MvvmTraning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925C060B1AA3063EF80A3C98 /* Pods_MvvmTraning.framework */; };
+		1D01A61C28569EA60089B13F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC01CD028537F2900ACEF76 /* Main.storyboard */; };
+		1D01A61E2856AF2A0089B13F /* UiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D01A61D2856AF2A0089B13F /* UiImageView.swift */; };
 		1D5FBB382809F5600063D54C /* CardSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5FBB372809F5600063D54C /* CardSlider.swift */; };
 		1D6DEC9927E28D8400D76756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6DEC9827E28D8400D76756 /* AppDelegate.swift */; };
 		1D6DEC9B27E28D8400D76756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6DEC9A27E28D8400D76756 /* SceneDelegate.swift */; };
@@ -20,13 +22,13 @@
 		1D7DFFEC284801C10028EE7F /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DFFEB284801C10028EE7F /* LaunchViewController.swift */; };
 		1DAAE47B2819C9CB002A4DD3 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAE47A2819C9CB002A4DD3 /* ImageModel.swift */; };
 		1DBE3194284B203E0061AF0A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DBE3193284B203E0061AF0A /* Launch Screen.storyboard */; };
-		1DC01CD128537F2900ACEF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC01CCF28537F2900ACEF76 /* Main.storyboard */; };
 		1DC01CD42853812B00ACEF76 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC01CD32853812B00ACEF76 /* LoginScreenView.swift */; };
 		1DF9242A280218C10053006A /* FactCardSliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF92429280218C10053006A /* FactCardSliderModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13AB6E918B192653D84844A8 /* Pods-MvvmTraning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MvvmTraning.debug.xcconfig"; path = "Target Support Files/Pods-MvvmTraning/Pods-MvvmTraning.debug.xcconfig"; sourceTree = "<group>"; };
+		1D01A61D2856AF2A0089B13F /* UiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiImageView.swift; sourceTree = "<group>"; };
 		1D5FBB372809F5600063D54C /* CardSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSlider.swift; sourceTree = "<group>"; };
 		1D6DEC9527E28D8400D76756 /* MvvmTraning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MvvmTraning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6DEC9827E28D8400D76756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,9 +43,8 @@
 		1D7DFFEB284801C10028EE7F /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		1DAAE47A2819C9CB002A4DD3 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		1DBE3193284B203E0061AF0A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		1DC01CD028537F2900ACEF76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		1DC01CD028537F2900ACEF76 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1DC01CD32853812B00ACEF76 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
-		1DECC54A28357FC4000C8A8C /* rx.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = rx.playground; path = ../../../../../rx.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1DF92429280218C10053006A /* FactCardSliderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCardSliderModel.swift; sourceTree = "<group>"; };
 		925C060B1AA3063EF80A3C98 /* Pods_MvvmTraning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MvvmTraning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9BA250ECF1DD60D381CD5F /* Pods-MvvmTraning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MvvmTraning.release.xcconfig"; path = "Target Support Files/Pods-MvvmTraning/Pods-MvvmTraning.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				1DC01CD2285380EC00ACEF76 /* extensions */,
-				1DECC54A28357FC4000C8A8C /* rx.playground */,
 				1D5FBB362809F45D0063D54C /* New Group */,
 				1D6DECAC27E28FB100D76756 /* apiService */,
 				1D6DECAE27E28FFD00D76756 /* Models */,
@@ -154,7 +154,7 @@
 		1D6DECB727E8B80800D76756 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				1DC01CCF28537F2900ACEF76 /* Main.storyboard */,
+				1DC01CD028537F2900ACEF76 /* Main.storyboard */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -163,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				1DC01CD32853812B00ACEF76 /* LoginScreenView.swift */,
+				1D01A61D2856AF2A0089B13F /* UiImageView.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -247,7 +248,7 @@
 				1D7DFFEA2847FD420028EE7F /* Dog.gif in Resources */,
 				1D6DECA227E28D8800D76756 /* Assets.xcassets in Resources */,
 				1DBE3194284B203E0061AF0A /* Launch Screen.storyboard in Resources */,
-				1DC01CD128537F2900ACEF76 /* Main.storyboard in Resources */,
+				1D01A61C28569EA60089B13F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +309,7 @@
 				1DAAE47B2819C9CB002A4DD3 /* ImageModel.swift in Sources */,
 				1DF9242A280218C10053006A /* FactCardSliderModel.swift in Sources */,
 				1D6DEC9927E28D8400D76756 /* AppDelegate.swift in Sources */,
+				1D01A61E2856AF2A0089B13F /* UiImageView.swift in Sources */,
 				1D6DECB427E290FF00D76756 /* FactModel.swift in Sources */,
 				1DC01CD42853812B00ACEF76 /* LoginScreenView.swift in Sources */,
 				1D6DEC9B27E28D8400D76756 /* SceneDelegate.swift in Sources */,
@@ -315,17 +317,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		1DC01CCF28537F2900ACEF76 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1DC01CD028537F2900ACEF76 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6DECA727E28D8800D76756 /* Debug */ = {
