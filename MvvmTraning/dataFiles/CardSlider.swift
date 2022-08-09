@@ -9,10 +9,10 @@ import Foundation
 import CardSlider
 
 class CardSliderSource: CardSliderDataSource {
-    private var cardSliderModels:[FactCardSliderModel]
+    private var cardSliderModels:[AnimalModelCard]
     
     
-    init(cardSliderModel:[FactCardSliderModel]){
+    init(cardSliderModel:[AnimalModelCard]){
         self.cardSliderModels = cardSliderModel
     }
 

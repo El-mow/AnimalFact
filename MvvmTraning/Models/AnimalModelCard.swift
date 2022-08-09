@@ -9,7 +9,7 @@ import Foundation
 import CardSlider
 
 
-struct FactCardSliderModel : CardSliderItem {
+struct AnimalModelCard : CardSliderItem {
     var image: UIImage?
     
     var rating: Int?

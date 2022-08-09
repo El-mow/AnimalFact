@@ -20,6 +20,7 @@ class ApiServices : NSObject {
                 if let data = data {
 
                     let jsonCoder = JSONDecoder()
+                                           
                     let empData = try! jsonCoder.decode([FactModel].self, from: data)
                     completion(empData)
                 }

@@ -7,10 +7,11 @@
 
 import Foundation
 import UIKit
-
+import SwiftUI
 
 
 extension HomeViewController {
+ 
     var screen_height : CGFloat{
         get{
             return view.frame.size.height
@@ -25,6 +26,8 @@ extension HomeViewController {
     func initView(){
 
         view.addSubview(goodmoring_label)
+        view.backgroundColor = UIColor(red: 0.44, green: 0.64, blue: 0.60, alpha: 1.00)
+
          goodmoring_label.translatesAutoresizingMaskIntoConstraints = false
          goodmoring_label.frame.size.width = 100
          goodmoring_label.frame.size.height = 40
@@ -57,7 +60,8 @@ extension HomeViewController {
         
         
          wayToSave_label.translatesAutoresizingMaskIntoConstraints = false
-         wayToSave_label.widthAnchor.constraint(lessThanOrEqualToConstant: 200 ).isActive = true
+         wayToSave_label.widthAnchor.constraint(lessThanOrEqualToConstant: 200 )
+            .isActive = true
          wayToSave_label.topAnchor.constraint(greaterThanOrEqualTo: theBest_label.bottomAnchor, constant: 10).isActive = true
          wayToSave_label.leftAnchor.constraint(lessThanOrEqualTo: view.leftAnchor, constant: 40).isActive = true
          wayToSave_label.lineBreakMode = .byTruncatingMiddle
@@ -76,42 +80,92 @@ extension HomeViewController {
     }
     
     func setUpViewCollection() {
-        view.addSubview(animal_collection ?? UICollectionView())
         
-        animal_collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "myCell")
-        animal_collection.backgroundColor = UIColor.gray
-        animal_collection.center = view.center
+        self.view.addSubview(animal_collection)
+        
+        animal_collection.dataSource = self
+        animal_collection.delegate = self
+        animal_collection.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.cellId)
+//        UIColor(red: 0.44, green: 0.64, blue: 0.60, alpha: 1.00)
+        animal_collection.backgroundColor = .clear
+
+        animal_collection.translatesAutoresizingMaskIntoConstraints = false
+        animal_collection.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width ).isActive = true
+        animal_collection.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height ).isActive = true
+        animal_collection.topAnchor.constraint(equalTo: wayToSave_label.bottomAnchor, constant: 10).isActive = true
+        animal_collection.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    
 
         
+
+    
+       
         
     }
     
 }
 
-
-extension HomeViewController: UICollectionViewDataSource {
+// collection view setup  and cliking events
+extension HomeViewController: UICollectionViewDataSource , UICollectionViewDelegate , UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return  animal_names.count
+        return  StaticData.animalsCard.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let animalCell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath)
-        animalCell.backgroundColor = .brown
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.cellId, for: indexPath) as! CustomCell
+        cell.data = StaticData.animalsCard[indexPath.row]
         
-        return animalCell
+    
+        
+        
+        return cell
     }
     
-}
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfItemsPerRow:CGFloat = 2
+             let spacingBetweenCells:CGFloat = 16
+             
+             let totalSpacing = (2 * self.spacing) + ((numberOfItemsPerRow - 1) * spacingBetweenCells) //Amount of total spacing in a row
+        let width = (animal_collection.bounds
+                        .width - totalSpacing
+        )/numberOfItemsPerRow
+        
+        let height = (animal_collection.bounds
+                        .width - totalSpacing
+        )/numberOfItemsPerRow + 30
+        
+      
+        
+        if indexPath.row % 2 == 0 {
+            return CGSize(width: width, height: height + 20 )
 
+        }else if indexPath.row % 3 == 0 {
+            return CGSize(width: width, height: height + 40)
 
+        }else {
+            
+            return CGSize(width: width , height: height  )
 
-extension HomeViewController: UICollectionViewDelegate {
+        }
+                
+        return CGSize(width: width, height: height )
+
+        
+       }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       print("User tapped on item \(indexPath.row)")
+        
+        let arViewController = ArFilterViewController()
+        arViewController.modalTransitionStyle = .crossDissolve
+        arViewController.modalPresentationStyle = .popover
+        self.present(arViewController,animated: true)
+        
     }
+    
 }
+
 
 
 
