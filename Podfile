@@ -7,6 +7,8 @@ target 'MvvmTraning' do
    
  pod 'CardSlider'
  pod 'SDWebImage', '~> 5.0'
+ pod 'SwiftLint'
+
 
 
 

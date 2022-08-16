@@ -109,7 +109,7 @@ extension HomeViewController {
 extension HomeViewController: UICollectionViewDataSource , UICollectionViewDelegate , UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  StaticData.animalsCard.count ?? 0
+        return  StaticData.animalsCard.count 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -157,10 +157,10 @@ extension HomeViewController: UICollectionViewDataSource , UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let arViewController = ArFilterViewController()
-        arViewController.modalTransitionStyle = .crossDissolve
-        arViewController.modalPresentationStyle = .popover
-        self.present(arViewController,animated: true)
+        let factsViewController = FactsViewController()
+        factsViewController.modalTransitionStyle = .crossDissolve
+        factsViewController.modalPresentationStyle = .popover
+        self.present(factsViewController,animated: true)
         
     }
     

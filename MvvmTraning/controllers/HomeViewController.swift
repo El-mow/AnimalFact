@@ -60,13 +60,13 @@ final class HomeViewController: UIViewController {
      
     lazy var animal_collection: UICollectionView = {
 
-               let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
         layout.scrollDirection = .vertical
                    
-       let animal_collection = UICollectionView( frame: CGRect.zero, collectionViewLayout: layout)
+        let animal_collection = UICollectionView( frame: CGRect.zero, collectionViewLayout: layout)
 
        return animal_collection
    }()

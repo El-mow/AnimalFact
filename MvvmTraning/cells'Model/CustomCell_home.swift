@@ -44,8 +44,7 @@ class CustomCell: UICollectionViewCell {
         let name_label = UILabel()
       name_label.textColor = .black
       name_label.numberOfLines = 3
-      name_label.backgroundColor = .yellow
-        name_label.font = UIFont(name: "Marker Felt", size: 20.0)
+      name_label.font = UIFont(name: "Marker Felt", size: 20.0)
         return name_label
     }()
     
